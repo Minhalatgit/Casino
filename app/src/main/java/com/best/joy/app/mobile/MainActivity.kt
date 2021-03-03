@@ -2,13 +2,9 @@ package com.best.joy.app.mobile
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
-
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,17 +50,6 @@ class MainActivity : AppCompatActivity() {
 
         // The directory is now empty so delete it
         return dir!!.delete()
-    }
-
-    class MyBrowser : WebViewClient() {
-        override fun shouldOverrideUrlLoading(
-            view: WebView,
-            url: String
-        ): Boolean {
-            Log.d("MainActivity", "shouldOverrideUrlLoading called with $url")
-            view.loadUrl(url)
-            return true
-        }
     }
 
     override fun onStop() {
